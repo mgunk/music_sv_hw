@@ -4,7 +4,7 @@ name VARCHAR(60) not null unique
 );
 create table if not exists artist(
 artist_id SERIAL primary key,
-name VARCHAR(80) not null
+name VARCHAR(80) unique not null
 );
 create table if not exists genres_artist(
 genres_id INTEGER references genres(genres_id),
@@ -29,7 +29,7 @@ albums_id INTEGER references albums(albums_id)
 );
 create table if not exists collection(
 collection_id SERIAL primary key,
-name VARCHAR(100) not null,
+name VARCHAR(100) unique not null,
 year INTEGER not null
 );
 create table if not exists tracks_collection(
